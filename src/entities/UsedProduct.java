@@ -6,6 +6,7 @@ public class UsedProduct extends Product {
 	
 	private Date dataFabricacao;
 	
+	
 	public UsedProduct () {
 		
 	}

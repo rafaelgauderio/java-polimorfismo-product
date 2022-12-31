@@ -30,7 +30,7 @@ public class ImportedProduct extends Product {
 	@Override
 	public String etiquetaDePreco () {
 		
-		return name + " r$ " + String.format("%.2f", price) + " (Taxa de Alfândega: " + String.format("%.2f", this.taxaAlfandega) + ")";
+		return name + " r$ " + String.format("%.2f", price) + " (Taxa de Alfândega: $ " + String.format("%.2f", this.taxaAlfandega) + ")";
 	}
 	
 	
