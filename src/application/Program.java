@@ -30,7 +30,7 @@ public class Program {
 
 			System.out.println("Dados do produto #" + i);
 			System.out.print("Comum, usado ou importado (c/u/i)? ");
-			char tipo = input.next().charAt(0);
+			char tipo = input.next().toLowerCase().charAt(0);
 
 			System.out.print("Nome: ");
 			input.nextLine(); // consumir a quebra de linha pendente
@@ -39,7 +39,7 @@ public class Program {
 			Double preco = input.nextDouble();
 			input.nextLine(); // consumir a quebra de linha pendente
 
-			if (tipo == 'i') {
+			if (tipo == 'i' ) {
 				System.out.print("Taxa de alfandega: ");
 				Double taxaAlfandega = input.nextDouble();
 				Product produtoImportado = new ImportedProduct(nome, preco, taxaAlfandega);
@@ -54,10 +54,14 @@ public class Program {
 				listaProdutos.add(produtoUsado);
 				
 
-			} else {
+			} else if (tipo =='c'){
 				Product produtoComum = new Product(nome, preco);
 				listaProdutos.add(produtoComum);
 
+			} else {
+				System.out.println("Foi informado um valor inválido para o tipo de Produto.\n"
+						+ "Os valores possível são Comum, usado ou importado (c/u/i)?\n");
+				i--; // para incrementar a variável caso entrar aqui
 			}
 		}
 
